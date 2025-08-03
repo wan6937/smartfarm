@@ -25,6 +25,5 @@ Arduino UNO R4 WiFi 기반의 스마트팜 통합 제어 스케치입니다.
 ## 라이브러리
 - WiFiS3  
 - PubSubClient  
-- Wire (기본 포함)  
 - SparkFun_SCD4x_Arduino_Library  
 - ArduinoJson  

@@ -1,0 +1,415 @@
+/* =============== 기본 스타일 =============== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+/* =============== 레이아웃 =============== */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* =============== 헤더 스타일 =============== */
+header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+h1 {
+    font-size: 2.5em;
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+#connection-status {
+    color: #7f8c8d;
+    font-size: 0.9em;
+}
+
+/* =============== 환경 박스 스타일 =============== */
+.environment-box {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+/* =============== 센서 섹션 스타일 =============== */
+.sensor-section {
+    margin-bottom: 30px;
+}
+
+.sensor-section h2 {
+    color: #2c3e50;
+    margin-bottom: 20px;
+    font-size: 1.5em;
+}
+
+.sensor-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-bottom: 20px;
+}
+
+.sensor-card {
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.sensor-section:first-child .sensor-card:nth-child(1) {
+    background: linear-gradient(135deg, #e3f2fd, #bbdefb);
+}
+
+.sensor-section:first-child .sensor-card:nth-child(2) {
+    background: linear-gradient(135deg, #e8f5e9, #c8e6c9);
+}
+
+.sensor-section:first-child .sensor-card:nth-child(3) {
+    background: linear-gradient(135deg, #f3e5f5, #e1bee7);
+}
+
+.sensor-section:last-child .sensor-card:nth-child(1) {
+    background: linear-gradient(135deg, #e0f7fa, #b2ebf2);
+}
+
+.sensor-section:last-child .sensor-card:nth-child(2) {
+    background: linear-gradient(135deg, #fff3e0, #ffe0b2);
+}
+
+.sensor-section:last-child .sensor-card:nth-child(3) {
+    background: linear-gradient(135deg, #f1f8e9, #dcedc8);
+}
+
+.sensor-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.sensor-card h3 {
+    color: #34495e;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.sensor-card p {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+/* =============== 제어 섹션 스타일 =============== */
+.control-section {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.control-section h2 {
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+.control-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.control-btn {
+    padding: 15px;
+    border: none;
+    border-radius: 8px;
+    background-color: #e74c3c;
+    color: white;
+    font-size: 1em;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.control-btn:hover {
+    opacity: 0.9;
+}
+
+.control-btn.active {
+    background-color: #27ae60;
+}
+
+/* =============== 데이터 섹션 스타일 =============== */
+.data-section {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 30px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.data-section h2 {
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+.data-box {
+    text-align: center;
+    padding: 20px;
+}
+
+.data-link {
+    display: inline-block;
+    padding: 15px 30px;
+    background-color: #3498db;
+    color: white;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.data-link:hover {
+    background-color: #2980b9;
+}
+
+/* =============== 데이터 링크 스타일 =============== */
+.data-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin: 30px 0;
+}
+
+.records-link {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #3498db;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.2s ease;
+    font-weight: 500;
+}
+
+.records-link:hover {
+    background-color: #2980b9;
+}
+
+/* =============== 기록 테이블 스타일 =============== */
+.records-container {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px auto;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    overflow-x: auto;
+    max-width: 900px;
+}
+
+#recordsTable {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin-bottom: 20px;
+    font-size: 14px;
+}
+
+#recordsTable th,
+#recordsTable td {
+    padding: 15px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+#recordsTable th {
+    background-color: #f8f9fa;
+    color: #2c3e50;
+    font-weight: bold;
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    border-bottom: 2px solid #ddd;
+}
+
+/* 각 열의 너비와 정렬 설정 */
+#recordsTable th:nth-child(1),
+#recordsTable td:nth-child(1) {
+    width: 25%;
+    text-align: center;
+}
+
+#recordsTable th:nth-child(2),
+#recordsTable td:nth-child(2) {
+    width: 25%;
+    text-align: center;
+}
+
+#recordsTable th:nth-child(3),
+#recordsTable td:nth-child(3) {
+    width: 25%;
+    text-align: center;
+}
+
+#recordsTable th:nth-child(4),
+#recordsTable td:nth-child(4) {
+    width: 25%;
+    text-align: center;
+}
+
+#recordsTable tr:hover {
+    background-color: #f5f8fa;
+    transition: background-color 0.2s ease;
+}
+
+#recordsTable tr:nth-child(even) {
+    background-color: #fafafa;
+}
+
+/* 페이지네이션 스타일 */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin: 30px auto;
+    width: 100%;
+    text-align: center;
+}
+
+.pagination button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #3498db;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    font-size: 14px;
+    min-width: 100px;
+}
+
+.pagination button:hover {
+    background-color: #2980b9;
+}
+
+.pagination button:disabled {
+    background-color: #bdc3c7;
+    cursor: not-allowed;
+}
+
+#pageInfo {
+    color: #7f8c8d;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* =============== 그래프 스타일 =============== */
+.chart-container {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 20px auto;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    max-width: 1000px;
+}
+
+.chart-wrapper {
+    height: 300px;
+    margin-bottom: 30px;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+.chart-wrapper:last-child {
+    margin-bottom: 0;
+}
+
+/* 뷰 전환 버튼 스타일 */
+.view-toggle {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.view-toggle button {
+    padding: 10px 20px;
+    border: 1px solid #3498db;
+    border-radius: 5px;
+    background-color: white;
+    color: #3498db;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.view-toggle button.active {
+    background-color: #3498db;
+    color: white;
+}
+
+.view-toggle button:hover {
+    background-color: #2980b9;
+    color: white;
+}
+
+/* =============== 시스템 상태 버튼 스타일 =============== */
+.system-status-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.status-btn {
+    padding: 10px 20px;
+    border-radius: 8px;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    opacity: 0.3;
+    transition: all 0.3s ease;
+    cursor: default;
+}
+
+.status-btn.active {
+    opacity: 1;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.emergency-btn {
+    background-color: #f1c40f;
+}
+
+.recovery-btn {
+    background-color: #3498db;
+}
+
+/* =============== 푸터 스타일 =============== */
+footer {
+    text-align: center;
+    color: #7f8c8d;
+    margin-top: 30px;
+}
+
+/* =============== 반응형 디자인 =============== */
+@media (max-width: 768px) {
+    .sensor-grid, .control-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .sensor-grid, .control-grid {
+        grid-template-columns: 1fr;
+    }
+}

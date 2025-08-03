@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FarmSmart</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>FarmSmart</h1>
+            <div id="connection-status">연결 중...</div>
+        </header>
+
+        <main>
+            <div class="environment-box">
+                <!-- 대기 환경 센서 -->
+                <section class="sensor-section">
+                    <h2>대기 환경</h2>
+                    <div class="sensor-grid">
+                        <div class="sensor-card">
+                            <h3>온도</h3>
+                            <p><span id="temperature">--</span>°C</p>
+                        </div>
+                        <div class="sensor-card">
+                            <h3>습도</h3>
+                            <p><span id="humidity">--</span>%</p>
+                        </div>
+                        <div class="sensor-card">
+                            <h3>CO2</h3>
+                            <p><span id="co2">--</span>ppm</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 수조 환경 센서 -->
+                <section class="sensor-section">
+                    <h2>수조 환경</h2>
+                    <div class="sensor-grid">
+                        <div class="sensor-card">
+                            <h3>수온</h3>
+                            <p><span id="water-temp">--</span>°C</p>
+                        </div>
+                        <div class="sensor-card">
+                            <h3>pH</h3>
+                            <p><span id="ph">--</span></p>
+                        </div>
+                        <div class="sensor-card">
+                            <h3>EC</h3>
+                            <p><span id="ec">--</span>μS/cm</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- LED 제어 -->
+            <section class="control-section">
+                <h2>LED 제어</h2>
+                <div class="control-grid">
+                    <button class="control-btn" onclick="toggleDevice(0)">어항등</button>
+                    <button class="control-btn" onclick="toggleDevice(1)">식물등1</button>
+                    <button class="control-btn" onclick="toggleDevice(2)">식물등2</button>
+                </div>
+            </section>
+
+            <!-- 모터 제어 -->
+            <section class="control-section">
+                <h2>모터 제어</h2>
+                <div class="control-grid">
+                    <button class="control-btn" onclick="toggleMotor(0)">UP 모터</button>
+                    <div class="status-btn emergency-btn" id="emergency-status">EMERGENCY</div>
+                    <div class="status-btn recovery-btn" id="recovery-status">RECOVERY</div>
+                </div>
+            </section>
+
+            <!-- 데이터 기록 -->
+            <section class="data-section">
+                <h2>데이터 기록</h2>
+                <div class="data-box">
+                    <div class="data-links">
+                        <a href="records.html?type=air" class="records-link">대기 환경 데이터</a>
+                        <a href="records.html?type=water" class="records-link">수조 환경 데이터</a>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>마지막 업데이트: <span id="last-update">--:--:--</span></p>
+        </footer>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mqtt/4.3.7/mqtt.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

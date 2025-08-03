@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>환경 데이터 기록</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        .data-type-toggle {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .data-type-toggle button {
+            padding: 10px 20px;
+            margin: 0 5px;
+            border: 1px solid #ccc;
+            background-color: #f8f8f8;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: all 0.3s;
+        }
+        .data-type-toggle button.active {
+            background-color: #4CAF50;
+            color: white;
+            border-color: #4CAF50;
+        }
+        
+        /* 페이지네이션 스타일 */
+        .page-buttons {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 20px 0;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        .page-buttons a {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+            padding: 5px;
+            font-size: 14px;
+            min-width: 24px;
+            text-align: center;
+        }
+        .page-buttons a:hover {
+            text-decoration: underline;
+        }
+        .page-buttons a.active {
+            color: #007bff;
+            font-weight: bold;
+        }
+        .page-buttons a.disabled {
+            color: #ccc;
+            cursor: not-allowed;
+            pointer-events: none;
+        }
+        .page-info {
+            display: none;
+        }
+        .pagination {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .pagination-row {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            gap: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 id="pageTitle">환경 데이터 기록</h1>
+        
+        <div class="view-toggle">
+            <button id="showTable" class="active">테이블 보기</button>
+            <button id="showChart">그래프 보기</button>
+        </div>
+        
+        <div class="records-container" id="tableView">
+            <table id="recordsTable">
+                <thead id="recordsHeader">
+                    <tr>
+                        <th>날짜</th>
+                        <th>시간</th>
+                        <th>온도</th>
+                        <th>습도</th>
+                        <th>CO2</th>
+                    </tr>
+                </thead>
+                <tbody id="recordsBody">
+                </tbody>
+            </table>
+            <div class="pagination" id="pagination">
+                <span id="pageInfo" class="page-info">페이지 1</span>
+                <div id="pageButtons" class="page-buttons">
+                    <!-- 페이지 버튼들이 여기에 동적으로 추가됩니다 -->
+                </div>
+            </div>
+        </div>
+        
+        <div class="chart-container" style="display: none;">
+            <div class="chart-wrapper" id="temperatureChartContainer">
+                <canvas id="temperatureChart"></canvas>
+            </div>
+            <div class="chart-wrapper" id="humidityChartContainer">
+                <canvas id="humidityChart"></canvas>
+            </div>
+            <div class="chart-wrapper" id="co2ChartContainer">
+                <canvas id="co2Chart"></canvas>
+            </div>
+            <div class="chart-wrapper" id="phChartContainer" style="display: none;">
+                <canvas id="phChart"></canvas>
+            </div>
+            <div class="chart-wrapper" id="tdsChartContainer" style="display: none;">
+                <canvas id="tdsChart"></canvas>
+            </div>
+        </div>
+        
+        <a href="index.html" class="back-button">메인으로 돌아가기</a>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="records.js"></script>
+</body>
+</html>
